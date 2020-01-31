@@ -1,0 +1,126 @@
+package linkedList;
+
+public class LinkedList {
+	Node head;
+
+
+	public Node insertAtTheEnd(int data){
+		Node newNode=new Node(data);
+		if(head==null){
+			head=newNode;
+		}
+		else{
+			Node temp=head;
+			while(temp.next!=null){
+				temp=temp.next;
+			}
+			temp.next=newNode;
+		}
+
+		return head;
+	}
+
+	public Node insertAtTheBeginning(int data){
+
+		Node newNode=new Node(data);
+		if(head!=null)
+			newNode.next=head;
+
+		head=newNode;
+
+
+		return head;
+	}
+	public Node searchByValue(int val){
+		if(head==null){
+			return null;
+		}
+		else{			
+			Node temp=head;			
+			while(temp.next!=null){
+				if(temp.data==val){
+					return temp;
+				}
+				temp=temp.next;						
+			}
+			if(temp.data==val){
+				return temp;
+			}
+			else{
+				return null;
+			}
+		}
+	}
+
+	public Node deleteByValue(int val){
+		Node del=searchByValue(val);
+		if(del!=null){
+			if(del==head){
+				head=head.next;
+				return head;
+			}
+			else{
+				Node temp=head;
+
+				while(temp.next!=del){
+					temp=temp.next;
+				}
+				temp.next=temp.next.next;
+				return head;
+			}
+		}
+		else{
+			return null;
+		}
+	}
+
+	//	public Node deleteByIndex(int val){
+	//		
+	//		
+	//		
+	//		
+	//		
+	//		
+	//	}
+
+	public int sizeOfLinkedList(){
+		int count=0;
+		if(head==null){
+			return 0;
+		}
+		else{
+			Node temp=head;			
+			while(temp.next!=null){
+				temp=temp.next;
+				
+				
+				
+			}
+		}
+		
+
+
+
+	
+	}
+
+
+
+
+
+
+
+
+
+
+
+	public static void main(String [] args){
+
+
+
+
+
+
+	}
+
+}
