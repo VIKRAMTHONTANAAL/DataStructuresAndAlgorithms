@@ -142,7 +142,7 @@ public class LinkedList {
 		}
 		else{
 			Node temp=head.next;
-			Node temp2;
+		//	Node temp2;
 			while(temp.next!=null){
 
 
