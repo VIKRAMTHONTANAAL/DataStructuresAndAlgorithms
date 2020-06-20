@@ -1,7 +1,8 @@
 package linkedList;
 
 public class LinkedList {
-	Node head;
+	static Node head=null;
+
 
 
 	public Node insertAtTheEnd(int data){
@@ -42,7 +43,7 @@ public class LinkedList {
 					return temp;
 				}
 				temp=temp.next;						
-			}
+			}		
 			if(temp.data==val){
 				return temp;
 			}
@@ -142,20 +143,14 @@ public class LinkedList {
 		}
 		else{
 			Node temp=head.next;
-		//	Node temp2;
+			//	Node temp2;
 			while(temp.next!=null){
 
 
 			}
 
-			
+
 		}
-
-
-
-
-
-
 		return null;
 	}
 
@@ -168,17 +163,80 @@ public class LinkedList {
 		return null;
 	}
 
+	public void printAll(){
+		/*Node temp= head;*/
+		if (head==null){
+			System.out.print("THERE IS NO ELEMENT PRESENT TO PRINT");
 
+		}
+
+		else {
+			Node temp=head;
+			while(temp!=null){
+				System.out.print(temp.data+" ");
+				temp=temp.next;
+			}
+		}
+		System.out.println();
+
+
+	}
 
 
 
 	public static void main(String [] args){
+		LinkedList ll=new LinkedList();
+		ll.printAll();
+		ll.insertAtTheEnd(10);
+		ll.printAll();
+		ll.insertAtTheEnd(11);
+		ll.printAll();
+		ll.insertAtTheEnd(12);
+		ll.printAll();
+
+		ll.insertAtTheBeginning(9);
+		ll.insertAtTheBeginning(8);
+		ll.insertAtTheBeginning(7);
+		ll.insertAtTheBeginning(6);
+		ll.printAll();
 
 
+		Node searchedVal=ll.searchByValue(5);
+		if(searchedVal==null){
+			System.out.println("NULL VALUE");	
+		}
+		else{
+			System.out.println(searchedVal.data);
+		}
 
 
+		Node searchedVal1=ll.searchByValue(6);
+		if(searchedVal1==null){
+			System.out.println("NULL VALUE");	
+		}
+		else{
+			System.out.println(searchedVal1.data);
+		}
+
+		ll.printAll();
+
+		ll.deleteByValue(9);
+
+		ll.printAll();
+
+		ll.deleteByValue(6);
+		ll.printAll();
+
+		ll.deleteByIndex(0);
+		ll.printAll();
+
+		ll.deleteByIndex(3);
+		ll.printAll();
 
 
+		System.out.println(ll.getPreviousNode(head));
+		System.out.println(ll.getPreviousNode(head.next));
+		System.out.println(ll.getPreviousNode(head.next.next));
 	}
 
 }
