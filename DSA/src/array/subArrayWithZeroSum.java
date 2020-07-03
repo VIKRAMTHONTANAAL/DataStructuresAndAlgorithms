@@ -9,10 +9,11 @@ public class subArrayWithZeroSum {
 	
 	public static void main(String [] args){
 		
-	int array[]={4,2,-3,1,6};
-		//int array[]={4,2,0,-2,6};
+	//int array[]={4,2,-6,1,6};
+	int array[]={2,1,3,-4,-2};
+	int k=0;
 		
-		if(checkIfSubArrayWithZeroSumExists(array)){
+		if(checkIfSubArrayWithZeroSumExists(array,k)){
 			
 			System.out.println("YES");
 		}
@@ -26,7 +27,7 @@ public class subArrayWithZeroSum {
 		
 	}
 
-	 static boolean checkIfSubArrayWithZeroSumExists(int[] array) {
+	 static boolean checkIfSubArrayWithZeroSumExists(int[] array,int k) {
 		 int sum=0;
 		 
 		 Set <Integer> set=new HashSet<Integer>();
@@ -36,7 +37,7 @@ public class subArrayWithZeroSum {
 		 for(int i=0;i<array.length;i++){
 			 sum=array[i]+sum;
 			 
-			 if(array[i]==0||sum==0||set.contains(sum)){
+			 if(array[i]==k||sum==k||set.contains(sum-k)){
 				 
 				 return true;
 			 }
